@@ -1,0 +1,262 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AF80832E-0280-40C4-8976-90B02A0DC2C3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EthereumSqlUtils</RootNamespace>
+    <AssemblyName>EthereumSqlUtils</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Asn1\Asn1Encodable.cs" />
+    <Compile Include="Asn1\Asn1EncodableVector.cs" />
+    <Compile Include="Asn1\Asn1Exception.cs" />
+    <Compile Include="Asn1\ASN1Generator.cs" />
+    <Compile Include="Asn1\Asn1InputStream.cs" />
+    <Compile Include="Asn1\Asn1Null.cs" />
+    <Compile Include="Asn1\Asn1Object.cs" />
+    <Compile Include="Asn1\Asn1OctetString.cs" />
+    <Compile Include="Asn1\ASN1OctetStringParser.cs" />
+    <Compile Include="Asn1\Asn1OutputStream.cs" />
+    <Compile Include="Asn1\Asn1ParsingException.cs" />
+    <Compile Include="Asn1\Asn1Sequence.cs" />
+    <Compile Include="Asn1\ASN1SequenceParser.cs" />
+    <Compile Include="Asn1\Asn1Set.cs" />
+    <Compile Include="Asn1\ASN1SetParser.cs" />
+    <Compile Include="Asn1\ASN1StreamParser.cs" />
+    <Compile Include="Asn1\Asn1TaggedObject.cs" />
+    <Compile Include="Asn1\ASN1TaggedObjectParser.cs" />
+    <Compile Include="Asn1\Asn1Tags.cs" />
+    <Compile Include="Asn1\BerApplicationSpecific.cs" />
+    <Compile Include="Asn1\BerApplicationSpecificParser.cs" />
+    <Compile Include="Asn1\BERBitString.cs" />
+    <Compile Include="Asn1\BerOctetString.cs" />
+    <Compile Include="Asn1\BEROctetStringParser.cs" />
+    <Compile Include="Asn1\BerOutputStream.cs" />
+    <Compile Include="Asn1\BerSequence.cs" />
+    <Compile Include="Asn1\BERSequenceParser.cs" />
+    <Compile Include="Asn1\BerSet.cs" />
+    <Compile Include="Asn1\BERSetParser.cs" />
+    <Compile Include="Asn1\BerTaggedObject.cs" />
+    <Compile Include="Asn1\BERTaggedObjectParser.cs" />
+    <Compile Include="Asn1\ConstructedOctetStream.cs" />
+    <Compile Include="Asn1\CryptoPro\CryptoProObjectIdentifiers.cs" />
+    <Compile Include="Asn1\CryptoPro\ECGOST3410NamedCurves.cs" />
+    <Compile Include="Asn1\DefiniteLengthInputStream.cs" />
+    <Compile Include="Asn1\DerApplicationSpecific.cs" />
+    <Compile Include="Asn1\DerBitString.cs" />
+    <Compile Include="Asn1\DerBMPString.cs" />
+    <Compile Include="Asn1\DerBoolean.cs" />
+    <Compile Include="Asn1\DerEnumerated.cs" />
+    <Compile Include="Asn1\DERExternal.cs" />
+    <Compile Include="Asn1\DERExternalParser.cs" />
+    <Compile Include="Asn1\DerGeneralizedTime.cs" />
+    <Compile Include="Asn1\DerGeneralString.cs" />
+    <Compile Include="Asn1\DERGenerator.cs" />
+    <Compile Include="Asn1\DerIA5String.cs" />
+    <Compile Include="Asn1\DerInteger.cs" />
+    <Compile Include="Asn1\DerNull.cs" />
+    <Compile Include="Asn1\DerNumericString.cs" />
+    <Compile Include="Asn1\DerObjectIdentifier.cs" />
+    <Compile Include="Asn1\DerOctetString.cs" />
+    <Compile Include="Asn1\DEROctetStringParser.cs" />
+    <Compile Include="Asn1\DerOutputStream.cs" />
+    <Compile Include="Asn1\DerPrintableString.cs" />
+    <Compile Include="Asn1\DerSequence.cs" />
+    <Compile Include="Asn1\DERSequenceGenerator.cs" />
+    <Compile Include="Asn1\DERSequenceParser.cs" />
+    <Compile Include="Asn1\DerSet.cs" />
+    <Compile Include="Asn1\DERSetParser.cs" />
+    <Compile Include="Asn1\DerStringBase.cs" />
+    <Compile Include="Asn1\DerT61String.cs" />
+    <Compile Include="Asn1\DerTaggedObject.cs" />
+    <Compile Include="Asn1\DerUniversalString.cs" />
+    <Compile Include="Asn1\DerUTCTime.cs" />
+    <Compile Include="Asn1\DerUTF8String.cs" />
+    <Compile Include="Asn1\DerVisibleString.cs" />
+    <Compile Include="Asn1\IAsn1ApplicationSpecificParser.cs" />
+    <Compile Include="Asn1\IAsn1Choice.cs" />
+    <Compile Include="Asn1\IAsn1Convertible.cs" />
+    <Compile Include="Asn1\IAsn1String.cs" />
+    <Compile Include="Asn1\IndefiniteLengthInputStream.cs" />
+    <Compile Include="Asn1\LimitedInputStream.cs" />
+    <Compile Include="Asn1\OidTokenizer.cs" />
+    <Compile Include="Asn1\Sec\SECNamedCurves.cs" />
+    <Compile Include="Asn1\Sec\SECObjectIdentifiers.cs" />
+    <Compile Include="Asn1\X9\ECNamedCurveTable.cs" />
+    <Compile Include="Asn1\X9\X962NamedCurves.cs" />
+    <Compile Include="Asn1\X9\X9Curve.cs" />
+    <Compile Include="Asn1\X9\X9ECParameters.cs" />
+    <Compile Include="Asn1\X9\X9ECParametersHolder.cs" />
+    <Compile Include="Asn1\X9\X9ECPoint.cs" />
+    <Compile Include="Asn1\X9\X9FieldElement.cs" />
+    <Compile Include="Asn1\X9\X9FieldID.cs" />
+    <Compile Include="Asn1\X9\X9IntegerConverter.cs" />
+    <Compile Include="Asn1\X9\X9ObjectIdentifiers.cs" />
+    <Compile Include="Crypto\Agreement\ECDHBasicAgreement.cs" />
+    <Compile Include="Crypto\AsymmetricCipherKeyPair.cs" />
+    <Compile Include="Crypto\AsymmetricKeyParameter.cs" />
+    <Compile Include="Crypto\Digests\GeneralDigest.cs" />
+    <Compile Include="Crypto\Digests\KeccakDigest.cs" />
+    <Compile Include="Crypto\Digests\Sha256Digest.cs" />
+    <Compile Include="Crypto\ECDsaSigner.cs" />
+    <Compile Include="Crypto\EC\CustomNamedCurves.cs" />
+    <Compile Include="Crypto\Generators\ECKeyPairGenerator.cs" />
+    <Compile Include="Crypto\IAsymmetricCipherKeyPairGenerator.cs" />
+    <Compile Include="Crypto\IBasicAgreement.cs" />
+    <Compile Include="Crypto\ICipherParameters.cs" />
+    <Compile Include="Crypto\IDigest.cs" />
+    <Compile Include="Crypto\IDSA.cs" />
+    <Compile Include="Crypto\IMac.cs" />
+    <Compile Include="Crypto\KeyGenerationParameters.cs" />
+    <Compile Include="Crypto\Macs\HMac.cs" />
+    <Compile Include="Crypto\Paramaters\ECDomainParameters.cs" />
+    <Compile Include="Crypto\Paramaters\ECKeyGenerationParameters.cs" />
+    <Compile Include="Crypto\Paramaters\ECKeyParameters.cs" />
+    <Compile Include="Crypto\Paramaters\ECPrivateKeyParameters.cs" />
+    <Compile Include="Crypto\Paramaters\ECPublicKeyParameters.cs" />
+    <Compile Include="Crypto\Paramaters\KeyParameter.cs" />
+    <Compile Include="Crypto\Paramaters\ParametersWithRandom.cs" />
+    <Compile Include="Crypto\Prng\CryptoApiRandomGenerator.cs" />
+    <Compile Include="Crypto\Prng\DigestRandomGenerator.cs" />
+    <Compile Include="Crypto\Prng\IRandomGenerator.cs" />
+    <Compile Include="Crypto\Signers\HMacDsaKCalculator.cs" />
+    <Compile Include="Crypto\Signers\IDsaKCalculator.cs" />
+    <Compile Include="Crypto\Signers\RandomDsaKCalculator.cs" />
+    <Compile Include="Math\BigInteger.cs" />
+    <Compile Include="Math\EC\Abc\SimpleBigDecimal.cs" />
+    <Compile Include="Math\EC\Abc\Tnaf.cs" />
+    <Compile Include="Math\EC\Abc\ZTauElement.cs" />
+    <Compile Include="Math\EC\Custom\Djb\Curve25519.cs" />
+    <Compile Include="Math\EC\Custom\Djb\Curve25519Field.cs" />
+    <Compile Include="Math\EC\Custom\Djb\Curve25519FieldElement.cs" />
+    <Compile Include="Math\EC\Custom\Djb\Curve25519Point.cs" />
+    <Compile Include="Math\EC\ECAlgorithms.cs" />
+    <Compile Include="Math\EC\ECCurve.cs" />
+    <Compile Include="Math\EC\ECFieldElement.cs" />
+    <Compile Include="Math\EC\ECMultiplier.cs" />
+    <Compile Include="Math\EC\ECPoint.cs" />
+    <Compile Include="Math\EC\ECPointMap.cs" />
+    <Compile Include="Math\EC\Endo\ECEndomorphism.cs" />
+    <Compile Include="Math\EC\Endo\GlvEndomorphism.cs" />
+    <Compile Include="Math\EC\Endo\GlvTypeBEndomorphism.cs" />
+    <Compile Include="Math\EC\Endo\GlvTypeBParameters.cs" />
+    <Compile Include="Math\EC\LongArray.cs" />
+    <Compile Include="Math\EC\Multiplier\AbstractECMultiplier.cs" />
+    <Compile Include="Math\EC\Multiplier\ECMultiplier.cs" />
+    <Compile Include="Math\EC\Multiplier\FixedPointCombMultiplier.cs" />
+    <Compile Include="Math\EC\Multiplier\FixedPointPreCompInfo.cs" />
+    <Compile Include="Math\EC\Multiplier\FixedPointUtilities.cs" />
+    <Compile Include="Math\EC\Multiplier\GlvMultiplier.cs" />
+    <Compile Include="Math\EC\Multiplier\PreCompInfo.cs" />
+    <Compile Include="Math\EC\Multiplier\WNafL2RMultiplier.cs" />
+    <Compile Include="Math\EC\Multiplier\WNafPreCompInfo.cs" />
+    <Compile Include="Math\EC\Multiplier\WNafUtilities.cs" />
+    <Compile Include="Math\EC\Multiplier\WTauNafMultiplier.cs" />
+    <Compile Include="Math\EC\Multiplier\WTauNafPreCompInfo.cs" />
+    <Compile Include="Math\EC\ScaleXPointMap.cs" />
+    <Compile Include="Math\Field\FiniteFields.cs" />
+    <Compile Include="Math\Field\GenericPolynomialExtensionField.cs" />
+    <Compile Include="Math\Field\GF2Polynomial.cs" />
+    <Compile Include="Math\Field\IExtensionField.cs" />
+    <Compile Include="Math\Field\IFiniteField.cs" />
+    <Compile Include="Math\Field\IPolynomial.cs" />
+    <Compile Include="Math\Field\IPolynomialExtensionField.cs" />
+    <Compile Include="Math\Field\PrimeField.cs" />
+    <Compile Include="Math\Raw\Mod.cs" />
+    <Compile Include="Math\Raw\Nat.cs" />
+    <Compile Include="Math\Raw\Nat256.cs" />
+    <Compile Include="RLP\RLPStringFormatter.cs" />
+    <Compile Include="Security\DigestUtilities.cs" />
+    <Compile Include="Security\GeneralSecurityException.cs" />
+    <Compile Include="Security\InvalidKeyException.cs" />
+    <Compile Include="Security\InvalidParameterException.cs" />
+    <Compile Include="Security\KeyException.cs" />
+    <Compile Include="Security\SecureRandom.cs" />
+    <Compile Include="Security\SecurityUtilityException.cs" />
+    <Compile Include="SignerUtils.cs" />
+    <Compile Include="Hex\HexConvertors\Extensions\HexBigIntegerConvertorExtensions.cs" />
+    <Compile Include="Hex\HexConvertors\Extensions\HexByteConvertorExtensions.cs" />
+    <Compile Include="Hex\HexConvertors\Extensions\HexStringUTF8ConvertorExtensions.cs" />
+    <Compile Include="Hex\HexConvertors\HexBigIntegerBigEndianConvertor.cs" />
+    <Compile Include="Hex\HexConvertors\HexUTF8StringConvertor.cs" />
+    <Compile Include="Hex\HexConvertors\IHexConvertor.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RLP\ConvertorForRLPEncodingExtensions.cs" />
+    <Compile Include="RLP\IRLPElement.cs" />
+    <Compile Include="RLP\RLP.cs" />
+    <Compile Include="RLP\RLPCollection.cs" />
+    <Compile Include="RLP\RLPItem.cs" />
+    <Compile Include="Signer\Crypto\DeterministicECDSA.cs" />
+    <Compile Include="Signer\Crypto\ECDSASignature.cs" />
+    <Compile Include="Signer\Crypto\ECKey.cs" />
+    <Compile Include="Signer\EthECDSASignature.cs" />
+    <Compile Include="Signer\EthECKey.cs" />
+    <Compile Include="Util\AddressUtil.cs" />
+    <Compile Include="Util\Arrays.cs" />
+    <Compile Include="Util\BigIntegerExtensions.cs" />
+    <Compile Include="Util\BigIntegers.cs" />
+    <Compile Include="Util\ByteUtil.cs" />
+    <Compile Include="Util\Collections\CollectionUtilities.cs" />
+    <Compile Include="Util\Collections\EnumerableProxy.cs" />
+    <Compile Include="Util\Collections\ISet.cs" />
+    <Compile Include="Util\Collections\UnmodifiableDictionary.cs" />
+    <Compile Include="Util\Collections\UnmodifiableDictionaryProxy.cs" />
+    <Compile Include="Util\Collections\UnmodifiableList.cs" />
+    <Compile Include="Util\Collections\UnmodifiableListProxy.cs" />
+    <Compile Include="Util\Collections\UnmodifiableSet.cs" />
+    <Compile Include="Util\Collections\UnmodifiableSetProxy.cs" />
+    <Compile Include="Util\Date\DateTimeUtilities.cs" />
+    <Compile Include="Util\Encoders\Hex.cs" />
+    <Compile Include="Util\Encoders\HexEncoder.cs" />
+    <Compile Include="Util\Encoders\IEncoder.cs" />
+    <Compile Include="Util\Enums.cs" />
+    <Compile Include="Util\IMemoable.cs" />
+    <Compile Include="Util\Integers.cs" />
+    <Compile Include="Util\Io\BaseInputStream.cs" />
+    <Compile Include="Util\Io\FilterStream.cs" />
+    <Compile Include="Util\Io\StreamOverflowException.cs" />
+    <Compile Include="Util\Io\Streams.cs" />
+    <Compile Include="Util\Pack.cs" />
+    <Compile Include="Util\Sha3Keccack.cs" />
+    <Compile Include="Util\Strings.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Math\EC\Custom\Sec\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
