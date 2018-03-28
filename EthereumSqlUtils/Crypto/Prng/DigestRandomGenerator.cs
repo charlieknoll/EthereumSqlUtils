@@ -35,23 +35,24 @@ namespace EthereumSqlUtils.Crypto.Prng
 		public void AddSeedMaterial(
 			byte[] inSeed)
 		{
-			lock (this)
-			{
+			//lock (this)
+			//{
 				DigestUpdate(inSeed);
 				DigestUpdate(seed);
 				DigestDoFinal(seed);
-			}
+			//}
 		}
 
 		public void AddSeedMaterial(
 			long rSeed)
 		{
-			lock (this)
-			{
+            //TODO CEK Make sure this is ok to comment
+			//lock (this)
+			//{
 				DigestAddCounter(rSeed);
 				DigestUpdate(seed);
 				DigestDoFinal(seed);
-			}
+			//}
 		}
 
 		public void NextBytes(
@@ -65,8 +66,8 @@ namespace EthereumSqlUtils.Crypto.Prng
 			int		start,
 			int		len)
 		{
-			lock (this)
-			{
+			//lock (this)
+			//{
 				int stateOff = 0;
 
 				GenerateState();
@@ -81,7 +82,7 @@ namespace EthereumSqlUtils.Crypto.Prng
 					}
 					bytes[i] = state[stateOff++];
 				}
-			}
+			//}
 		}
 
 		private void CycleSeed()

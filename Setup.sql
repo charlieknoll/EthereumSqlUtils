@@ -4,6 +4,7 @@
 --go
 
 DROP PROCEDURE GETPublicAddress
+DROP FUNCTION GetKeyPair
 
 DROP ASSEMBLY EthereumSqlUtilsAssembly 
 
@@ -13,12 +14,24 @@ CREATE ASSEMBLY EthereumSqlUtilsAssembly
 go
 
 
-CREATE PROCEDURE GetPublicAddress (@privateKey nvarchar(64))
+CREATE PROCEDURE GetPublicAddress (@privateKey nvarchar(66))
 AS 
 EXTERNAL NAME EthereumSqlUtilsAssembly.[EthereumSqlUtils.EthSigner].GetPublicAddress
 go
+--CREATE PROCEDURE GetKeyPair 
+--AS 
+--EXTERNAL NAME EthereumSqlUtilsAssembly.[EthereumSqlUtils.EthSigner].GetKeyPair
+--go
 
-exec GetPublicAddress 'f8f8a2f43c8376ccb0871305060d7b27b0554d2cc72bccf41b2705608452f315'
+CREATE FUNCTION GetKeyPair() RETURNS nchar(108)
+AS 
+EXTERNAL NAME EthereumSqlUtilsAssembly.[EthereumSqlUtils.EthSigner].GetKeyPair
+go
+
+exec GetPublicAddress '0xf8f8a2f43c8376ccb0871305060d7b27b0554d2cc72bccf41b2705608452f315'
+select dbo.GetKeyPair()
+
+--exec GetKeyPair 
 
 --sp_configure 'show advanced options', 1;  
 --GO  

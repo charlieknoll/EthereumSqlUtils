@@ -23,5 +23,17 @@ namespace EthereumSqlUtils
 
             SqlContext.Pipe?.Send(publicAddress);
         }
+        [Microsoft.SqlServer.Server.SqlFunction(DataAccess = DataAccessKind.None)]
+        public static string GenerateKeyPair()
+        {
+            var ethKey = EthECKey.GenerateKey();
+
+            var publicAddress = ethKey.GetPublicAddress();
+            var privateAddress = ethKey.GetPrivateKey();
+
+            //SqlContext.Pipe?.Send(publicAddress + privateAddress);
+
+            return publicAddress + privateAddress;
+        }
     }
 }
