@@ -27,11 +27,11 @@ namespace EthereumSqlUtils.Security
             if (digest == null)
                 return null;
             DigestRandomGenerator prng = new DigestRandomGenerator(digest);
-            //if (autoSeed)
-            //{
-            //    prng.AddSeedMaterial(NextCounterValue());
-            //    prng.AddSeedMaterial(GetNextBytes(Master, digest.GetDigestSize()));
-            //}
+            if (autoSeed)
+            {
+                //prng.AddSeedMaterial(NextCounterValue());
+                prng.AddSeedMaterial(GetNextBytes(Master, digest.GetDigestSize()));
+            }
             return prng;
         }
 
@@ -82,7 +82,7 @@ namespace EthereumSqlUtils.Security
         protected readonly IRandomGenerator generator;
 
         public SecureRandom()
-            //: this(CreatePrng("SECP256K1", true))
+            //TODO: this(CreatePrng("SECP256K1", true))
             : this(CreatePrng("SHA256", true))
         {
         }

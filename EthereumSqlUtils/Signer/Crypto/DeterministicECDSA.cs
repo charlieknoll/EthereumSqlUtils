@@ -4,8 +4,7 @@ using EthereumSqlUtils.Crypto;
 using EthereumSqlUtils.Crypto.Digests;
 using EthereumSqlUtils.Crypto.Paramaters;
 using EthereumSqlUtils.Crypto.Signers;
-using Org.BouncyCastle.Crypto;
-using Org.BouncyCastle.Crypto.Signers;
+
 
 namespace EthereumSqlUtils.Signer.Crypto
 {

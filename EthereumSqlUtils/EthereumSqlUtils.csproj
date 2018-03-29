@@ -154,6 +154,7 @@
     <Compile Include="Crypto\Prng\CryptoApiRandomGenerator.cs" />
     <Compile Include="Crypto\Prng\DigestRandomGenerator.cs" />
     <Compile Include="Crypto\Prng\IRandomGenerator.cs" />
+    <Compile Include="Crypto\Signers\ECDsaSigner.cs" />
     <Compile Include="Crypto\Signers\HMacDsaKCalculator.cs" />
     <Compile Include="Crypto\Signers\IDsaKCalculator.cs" />
     <Compile Include="Crypto\Signers\RandomDsaKCalculator.cs" />
